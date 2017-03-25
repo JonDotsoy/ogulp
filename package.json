@@ -1,0 +1,32 @@
+{
+  "name": "ogulp",
+  "private": false,
+  "version": "0.1.0",
+  "description": "Command Line Utility for Gulp",
+  "main": "index.js",
+  "engines": {
+    "node": "=> 7.0.0"
+  },
+  "bin": {
+    "ogulp": "bin/ogulp.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-cli": "*",
+    "resolve": "^1.3.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonDotsoy/ogulp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JonDotsoy/ogulp/issues"
+  },
+  "homepage": "https://github.com/JonDotsoy/ogulp#readme"
+}
