@@ -14,10 +14,23 @@ var args = [resolve.sync('gulp-cli/bin/gulp')];
 // Load mocha.opts into process.argv
 // Must be loaded here to handle node-specific options
 
-process.argv.slice(2).forEach(function (arg) {
+var skipArg = NaN
+
+process.argv.slice(2).forEach(function (arg, index) {
   var flag = arg.split('=')[0];
 
+  if (skipArg === index) {
+    args.unshift(arg)
+    args.unshift('--require')
+    skipArg = NaN
+    return
+  }
+
   switch (flag) {
+    case '-r':
+    case '--require':
+      skipArg = index + 1
+      break;
     case '-d':
       args.unshift('--debug');
       args.push('--no-timeouts');
@@ -54,7 +67,7 @@ process.argv.slice(2).forEach(function (arg) {
         args.unshift(arg);
       } else if (arg.indexOf('--max-old-space-size') === 0) {
         args.unshift(arg);
-      } else if (arg.indexOf('--preserve-symlinks') === 0) {
+      } else if (arg. indexOf('--preserve-symlinks') === 0) {
         args.unshift(arg);
       } else {
         args.push(arg);
@@ -62,6 +75,10 @@ process.argv.slice(2).forEach(function (arg) {
       break;
   }
 });
+
+console.log(process.execPath, ...args)
+
+process.exit(0)
 
 var proc = spawn(process.execPath, args, { stdio: 'inherit' });
 proc.on('exit', function (code, signal) {

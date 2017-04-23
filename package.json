@@ -1,18 +1,15 @@
 {
   "name": "ogulp",
-  "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Command Line Utility for Gulp",
   "main": "index.js",
   "engines": {
-    "node": "=> 7.0.0"
+    "node": ">= 7.0.0"
   },
   "bin": {
     "ogulp": "bin/ogulp.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
