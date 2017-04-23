@@ -10,11 +10,15 @@ so...
 
 A new command line to gulp that allow node flags as `ogulp --harmony-async-await mytask`.
 
+### With babel
+No more `gulpfile.babel.js`. Now use transform with require.
+
+    $ ogulp -r babel-register build
+
 ## Other example
 
     $ ogulp --use_strict
     $ ogulp --harmony-async-await
     $ ogulp --trace-deprecation
-
 
 
