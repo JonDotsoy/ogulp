@@ -76,10 +76,6 @@ process.argv.slice(2).forEach(function (arg, index) {
   }
 });
 
-console.log(process.execPath, ...args)
-
-process.exit(0)
-
 var proc = spawn(process.execPath, args, { stdio: 'inherit' });
 proc.on('exit', function (code, signal) {
   process.on('exit', function () {
